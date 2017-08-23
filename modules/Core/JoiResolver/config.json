@@ -1,0 +1,3 @@
+{
+  "Environments": ["local", "dev", "prod", "staging", "testing"]
+}

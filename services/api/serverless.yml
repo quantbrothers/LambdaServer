@@ -1,0 +1,95 @@
+service: api
+
+plugins:
+  - serverless-webpack
+
+custom:
+  stage: "${opt:stage, self:provider.stage}"
+  webpack: ./webpack.config.js
+
+package:
+  individually: true
+  exclude:
+    - "*"
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+  stage: dev
+  region: ${self:provider.environment.aws_region}
+
+  profile: ${file(../../local.yml):aws_profile}
+
+  memorySize: 128
+  timeout: 10
+
+  versionFunctions: false
+
+  environment: ${file(../../envVars/env.yml):${self:custom.stage}}
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:BatchWriteItem
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:DeleteItem
+        - dynamodb:BatchGetItem
+      Resource:
+        - "arn:aws:dynamodb:eu-west-1:233080724454:table/ToDos"
+
+resources:
+  Resources:
+    ToDoDynamoDbTable:
+      Type: "AWS::DynamoDB::Table"
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: "Id"
+            AttributeType: "S"
+          -
+            AttributeName: "UserId"
+            AttributeType: "S"
+          -
+            AttributeName: "CreatedAt"
+            AttributeType: "N"
+        KeySchema:
+          -
+            AttributeName: "Id"
+            KeyType: "HASH"
+        ProvisionedThroughput:
+          ReadCapacityUnits: "1"
+          WriteCapacityUnits: "1"
+        TableName: "ToDos"
+        GlobalSecondaryIndexes:
+          -
+            IndexName: "ToDos-UserId-CreatedAt-global-index"
+            KeySchema:
+              -
+                AttributeName: "UserId"
+                KeyType: "HASH"
+              -
+                AttributeName: "CreatedAt"
+                KeyType: "RANGE"
+            Projection:
+              ProjectionType: "ALL"
+            ProvisionedThroughput:
+              ReadCapacityUnits: "1"
+              WriteCapacityUnits: "1"
+
+functions:
+  items:
+    name: UberDoo-api-items-${self:custom.stage}
+    handler: items.handler
+    package:
+      include:
+        - items.js
+    events:
+      - http:
+          path: items
+          method: post
+          cors: true

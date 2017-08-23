@@ -1,0 +1,32 @@
+{
+  "authorizationFailed": {
+    "code": "AUTHORIZATION_FAILED",
+    "message": "Can't authorize with provided credentials.",
+    "codeNumber": 401
+  },
+  "resourceNotFound": {
+    "code": "RESOURCE_NOT_FOUND",
+    "message": "Requested resource not found.",
+    "codeNumber": 404
+  },
+  "resolverNoRequiredParameter": {
+    "code": "NO_REQUIRED_PARAMETER",
+    "message": "Resolver error: required parameter not found.",
+    "codeNumber": 410
+  },
+  "resolverParameterWrongType": {
+    "code": "PARAMETER_WRONG_TYPE",
+    "message": "Resolver error: parameter has the wrong type.",
+    "codeNumber": 411
+  },
+  "resolverParameterWrongValue": {
+    "code": "PARAMETER_WRONG_VALUE",
+    "message": "Resolver error: parameter has the wrong value.",
+    "codeNumber": 412
+  },
+  "resolverEmptyData": {
+    "code": "EMPTY_DATA",
+    "message": "Resolver error: empty data provided.",
+    "codeNumber": 413
+  }
+}

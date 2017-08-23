@@ -1,0 +1,57 @@
+{
+  "classNotInitialized": {
+    "code": "CLASS_IS_NOT_INITIALIZED",
+    "message": "initialize() method should be called first.",
+    "codeNumber": 10000
+  },
+  "resolverParameterNotValid": {
+    "code": "PARAMETER_NOT_VALID",
+    "message": "Resolver error: parameter is not valid.",
+    "codeNumber": 10010
+  },
+  "resolverParameterOverwrite": {
+    "code": "PARAMETER_OVERWRITE",
+    "message": "Resolver error: trying to overwrite parameter.",
+    "codeNumber": 10020
+  },
+  "resolverParameterDefaultValueToRequired": {
+    "code": "PARAMETER_DEFAULT_VALUE_TO_REQUIRED",
+    "message": "Resolver error: trying to set default value to required parameter.",
+    "codeNumber": 10030
+  },
+  "resolverParameterDefaultValueWrongType": {
+    "code": "PARAMETER_DEFAULT_VALUE_WRONG_TYPE",
+    "message": "Resolver error: default value does not match parameter\"s type.",
+    "codeNumber": 10040
+  },
+  "resolverAvailableValuesNotArray": {
+    "code": "AVAILABLE_VALUES_NOT_ARRAY",
+    "message": "Resolver error: available values is not an array.",
+    "codeNumber": 10050
+  },
+  "resolverAvailableValuesEmpty": {
+    "code": "AVAILABLE_VALUES_EMPTY",
+    "message": "Resolver error: available values array is empty.",
+    "codeNumber": 10060
+  },
+  "resolverParentEmptyString": {
+    "code": "PARENT_EMPTY_STRING",
+    "message": "Resolver error: parent property is an empty string.",
+    "codeNumber": 10070
+  },
+  "resolverParentNotObject": {
+    "code": "PARENT_NOT_OBJECT",
+    "message": "Resolver error: parent property is not object.",
+    "codeNumber": 10080
+  },
+  "resolverNoParameters": {
+    "code": "RESOLVER_NO_PARAMETERS",
+    "message": "Resolver error: no parameters specified.",
+    "codeNumber": 10090
+  },
+  "postgresEmptyData": {
+    "code": "POSTGRES_EMPTY_DATA",
+    "message": "Postgres error: empty data provided for query.",
+    "codeNumber": 13000
+  }
+}

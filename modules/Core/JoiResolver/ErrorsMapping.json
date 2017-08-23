@@ -1,0 +1,12 @@
+{
+  "any.required": "resolverNoRequiredParameter",
+  "object.base": "resolverParameterWrongType",
+  "string.base": "resolverParameterWrongType",
+  "number.base": "resolverParameterWrongType",
+  "date.base": "resolverParameterWrongType",
+  "string.guid": "resolverParameterWrongType",
+  "string.regex.base": "resolverParameterWrongValue",
+  "string.length": "resolverParameterWrongValue",
+  "array.includesRequiredUnknowns": "resolverParameterWrongValue",
+  "any.allowOnly": "resolverParameterWrongValue"
+}

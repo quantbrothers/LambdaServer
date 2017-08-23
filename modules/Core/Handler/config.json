@@ -1,0 +1,7 @@
+{
+  "timeoutStep": 100,
+  "eventSources": {
+    "lambda": "lambda",
+    "apiGateway": "apiGateway"
+  }
+}

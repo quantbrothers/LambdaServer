@@ -1,0 +1,4 @@
+{
+  "muteCustomers": "manager-bot-{env}-locker",
+  "forwardAnswersToAdmins": "manager-bot-{env}-forwarder"
+}

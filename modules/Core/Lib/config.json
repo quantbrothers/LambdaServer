@@ -1,0 +1,19 @@
+{
+  "environments": {
+    "prod": {
+      "name": "prod"
+    },
+    "dev": {
+      "name": "dev"
+    },
+    "local": {
+      "name": "local"
+    },
+    "staging": {
+      "name": "staging"
+    },
+    "testing": {
+      "name": "testing"
+    }
+  }
+}

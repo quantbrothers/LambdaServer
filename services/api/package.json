@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "sls": "./node_modules/.bin/serverless",
+    "d": "./node_modules/.bin/serverless deploy",
+    "df": "./node_modules/.bin/serverless deploy function -f",
+    "i": "./node_modules/.bin/serverless invoke -f"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "joi": "^10.6.0",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-builtin-extend": "^1.1.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.18.0",
+    "fs-readdir-recursive": "^1.0.0",
+    "serverless": "1.17.0",
+    "serverless-webpack": "git+https://github.com/kpotehin/serverless-webpack.git",
+    "webpack": "^2.6.1"
+  }
+}
